@@ -1,0 +1,12 @@
+SELECT p_name FROM (SELECT * fROM product ORDER BY sells DESC LIMIT 1);
+
+SELECT p_name FROM product WHERE sells = 0;
+
+SLECT c_name FROM (SELECT * FROM  customer WHERE last_purchase < DATEADD ( year,-1, GETDATE() ) );
+
+SELECT c_name FROM  (SELECT * FROM  buy WHERE p_date >= DATEADD(day,-30,GETDATE()) ORDER BY total_price DESC LIMIT 1);
+
+SELECT type FROM (SELECT * FROM product WHERE type = 'food' or type = 'electric' ORDER BY sells DESC LIMIT 1);
+
+SELECT * FROM product;
+
